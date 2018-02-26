@@ -1,0 +1,499 @@
+{
+  "version": "6.1.1",
+  "objects": [
+    {
+      "id": "26e166f0-2fe2-11e7-9d02-3f49bde5c1d5",
+      "type": "visualization",
+      "updated_at": "2018-02-20T12:49:49.875Z",
+      "version": 1,
+      "attributes": {
+        "title": "[Netflow v5]: Dashboard Navigation",
+        "visState": "{\"title\":\"[Netflow v5]: Dashboard Navigation\",\"type\":\"markdown\",\"params\":{\"markdown\":\"[Overview](#/dashboard/be46f9a0-0cb0-11e8-88ba-8d82bf9f2249) | [Conversation Partners](#/dashboard/b09e1e50-0cb0-11e8-88ba-8d82bf9f2249) | [Traffic Analysis](#/dashboard/d7716370-0cb0-11e8-88ba-8d82bf9f2249) | [Top-N](#/dashboard/c7115760-0cb0-11e8-88ba-8d82bf9f2249) | [Autonomous Systems](#/dashboard/ed432c60-0cb0-11e8-88ba-8d82bf9f2249) | [Flow Exporters](#/dashboard/cf6fd3f0-0cb0-11e8-88ba-8d82bf9f2249) | [Raw Flow Records](#/dashboard/e321ca20-0cb0-11e8-88ba-8d82bf9f2249)\\n***\",\"fontSize\":12},\"aggs\":[]}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "622844d0-6288-11e7-bcd8-a16ef1d32773",
+      "type": "visualization",
+      "updated_at": "2018-02-20T12:49:51.929Z",
+      "version": 1,
+      "attributes": {
+        "title": "[Netflow v5]: Destination Ports (bytes)",
+        "visState": "{\"title\":\"[Netflow v5]: Destination Ports (bytes)\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(index=\\\"netflow-*\\\", metric=\\\"sum:netflow.bytes\\\", split=\\\"netflow.dst_port:10\\\", kibana=true).scale_interval(1s).fit(mode=scale).if(operator=\\\"lt\\\", if=0, then=0).trim(start=2,end=1).label(regex=\\\"^.* netflow.dst_port:(.+) > .*$\\\", label=\\\"$1\\\").lines(width=1, stack=true, fill=1).yaxis(label=\\\"bytes / sec\\\", min=0)\",\"interval\":\"auto\"},\"aggs\":[],\"listeners\":{}}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":{\"query_string\":{\"query\":\"*\"}},\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "2c9567c0-6289-11e7-bcd8-a16ef1d32773",
+      "type": "visualization",
+      "updated_at": "2018-02-20T12:49:49.923Z",
+      "version": 1,
+      "attributes": {
+        "title": "[Netflow v5]: TCP Flags (bytes)",
+        "visState": "{\"title\":\"[Netflow v5]: TCP Flags (bytes)\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(index=\\\"netflow-*\\\", metric=\\\"sum:netflow.bytes\\\", split=\\\"netflow.tcp_flags:10\\\", kibana=true).scale_interval(1s).fit(mode=scale).if(operator=\\\"lt\\\", if=0, then=0).trim(start=2,end=1).label(regex=\\\"^.* netflow.tcp_flags:(.+) > .*$\\\", label=\\\"$1\\\").lines(width=1, stack=true, fill=1).yaxis(label=\\\"bytes / sec\\\", min=0)\",\"interval\":\"auto\"},\"aggs\":[],\"listeners\":{}}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":{\"query_string\":{\"query\":\"*\"}},\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "b61f84d0-6289-11e7-bcd8-a16ef1d32773",
+      "type": "visualization",
+      "updated_at": "2018-02-20T12:49:51.910Z",
+      "version": 1,
+      "attributes": {
+        "title": "[Netflow v5]: VLANs (bytes)",
+        "visState": "{\"title\":\"[Netflow v5]: VLANs (bytes)\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(index=\\\"netflow-*\\\", metric=\\\"sum:netflow.bytes\\\", split=\\\"netflow.vlan:10\\\", kibana=true).scale_interval(1s).fit(mode=scale).if(operator=\\\"lt\\\", if=0, then=0).trim(start=2,end=1).label(regex=\\\"^.* netflow.vlan:(.+) > .*$\\\", label=\\\"$1\\\").lines(width=1, stack=true, fill=1).yaxis(label=\\\"bytes / sec\\\", min=0)\",\"interval\":\"auto\"},\"aggs\":[],\"listeners\":{}}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":{\"query_string\":{\"query\":\"*\"}},\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "6ad67290-6289-11e7-bcd8-a16ef1d32773",
+      "type": "visualization",
+      "updated_at": "2018-02-20T12:49:51.899Z",
+      "version": 1,
+      "attributes": {
+        "title": "[Netflow v5]: Types of Service (bytes)",
+        "visState": "{\"title\":\"[Netflow v5]: Types of Service (bytes)\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(index=\\\"netflow-*\\\", metric=\\\"sum:netflow.bytes\\\", split=\\\"netflow.tos:10\\\", kibana=true).scale_interval(1s).fit(mode=scale).if(operator=\\\"lt\\\", if=0, then=0).trim(start=2,end=1).label(regex=\\\"^.* netflow.tos:(.+) > .*$\\\", label=\\\"$1\\\").lines(width=1, stack=true, fill=1).yaxis(label=\\\"bytes / sec\\\", min=0)\",\"interval\":\"auto\"},\"aggs\":[],\"listeners\":{}}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":{\"query_string\":{\"query\":\"*\"}},\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "91ae4100-6288-11e7-bcd8-a16ef1d32773",
+      "type": "visualization",
+      "updated_at": "2018-02-20T12:49:52.907Z",
+      "version": 1,
+      "attributes": {
+        "title": "[Netflow v5]: Source Ports (bytes)",
+        "visState": "{\"title\":\"[Netflow v5]: Source Ports (bytes)\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(index=\\\"netflow-*\\\", metric=\\\"sum:netflow.bytes\\\", split=\\\"netflow.src_port:10\\\", kibana=true).scale_interval(1s).fit(mode=scale).if(operator=\\\"lt\\\", if=0, then=0).trim(start=2,end=1).label(regex=\\\"^.* netflow.src_port:(.+) > .*$\\\", label=\\\"$1\\\").lines(width=1, stack=true, fill=1).yaxis(label=\\\"bytes / sec\\\", min=0)\",\"interval\":\"auto\"},\"aggs\":[],\"listeners\":{}}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":{\"query_string\":{\"query\":\"*\"}},\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "735d6c70-628e-11e7-a842-b787fa3508ce",
+      "type": "visualization",
+      "updated_at": "2018-02-20T12:49:52.913Z",
+      "version": 1,
+      "attributes": {
+        "title": "[Netflow v5]: Sources (bytes)",
+        "visState": "{\"title\":\"[Netflow v5]: Sources (bytes)\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(index=\\\"netflow-*\\\", metric=\\\"sum:netflow.bytes\\\", split=\\\"netflow.src_addr:10\\\", kibana=true).scale_interval(1s).fit(mode=scale).if(operator=\\\"lt\\\", if=0, then=0).trim(start=2,end=1).label(regex=\\\"^.* netflow.src_addr:(.+) > .*$\\\", label=\\\"$1\\\").lines(width=1, stack=true, fill=1).yaxis(label=\\\"bytes / sec\\\", min=0)\",\"interval\":\"auto\"},\"aggs\":[],\"listeners\":{}}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":{\"query_string\":{\"query\":\"*\"}},\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "56a23ac0-628e-11e7-a842-b787fa3508ce",
+      "type": "visualization",
+      "updated_at": "2018-02-20T12:49:51.905Z",
+      "version": 1,
+      "attributes": {
+        "title": "[Netflow v5]: Destinations (bytes)",
+        "visState": "{\"title\":\"[Netflow v5]: Destinations (bytes)\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(index=\\\"netflow-*\\\", metric=\\\"sum:netflow.bytes\\\", split=\\\"netflow.dst_addr:10\\\", kibana=true).scale_interval(1s).fit(mode=scale).if(operator=\\\"lt\\\", if=0, then=0).trim(start=2,end=1).label(regex=\\\"^.* netflow.dst_addr:(.+) > .*$\\\", label=\\\"$1\\\").lines(width=1, stack=true, fill=1).yaxis(label=\\\"bytes / sec\\\", min=0)\",\"interval\":\"auto\"},\"aggs\":[],\"listeners\":{}}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":{\"query_string\":{\"query\":\"*\"}},\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "7c2cfd10-2fc7-11e7-8936-6f5fd5520124",
+      "type": "visualization",
+      "updated_at": "2018-02-20T12:49:59.992Z",
+      "version": 1,
+      "attributes": {
+        "title": "[Netflow v5]: Sources (bytes)",
+        "visState": "{\"title\":\"[Netflow v5]: Sources (bytes)\",\"type\":\"pie\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"netflow.bytes\",\"customLabel\":\"Bytes\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"netflow.src_addr\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Source\"}}],\"listeners\":{}}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"index\":\"806fa790-163c-11e8-a313-97de4647e200\",\"query\":{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "a8b68cb0-2fc8-11e7-8d8b-45ec51795dad",
+      "type": "visualization",
+      "updated_at": "2018-02-20T12:50:01.012Z",
+      "version": 1,
+      "attributes": {
+        "title": "[Netflow v5]: Source Ports (bytes)",
+        "visState": "{\"title\":\"[Netflow v5]: Source Ports (bytes)\",\"type\":\"pie\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"netflow.bytes\",\"customLabel\":\"Bytes\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"netflow.src_port\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Source Port\"}}],\"listeners\":{}}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"index\":\"806fa790-163c-11e8-a313-97de4647e200\",\"query\":{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "5fd2fe30-2fc7-11e7-8936-6f5fd5520124",
+      "type": "visualization",
+      "updated_at": "2018-02-20T12:50:01.025Z",
+      "version": 1,
+      "attributes": {
+        "title": "[Netflow v5]: Destinations (bytes)",
+        "visState": "{\"title\":\"[Netflow v5]: Destinations (bytes)\",\"type\":\"pie\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"netflow.bytes\",\"customLabel\":\"Bytes\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"netflow.dst_addr\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Destination\"}}],\"listeners\":{}}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"index\":\"806fa790-163c-11e8-a313-97de4647e200\",\"query\":{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "47d426a0-2fc8-11e7-8b06-97426538fddd",
+      "type": "visualization",
+      "updated_at": "2018-02-20T12:50:00.006Z",
+      "version": 1,
+      "attributes": {
+        "title": "[Netflow v5]: Destination Ports (bytes)",
+        "visState": "{\"title\":\"[Netflow v5]: Destination Ports (bytes)\",\"type\":\"pie\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"netflow.bytes\",\"customLabel\":\"Bytes\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"netflow.dst_port\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Destination Port\"}}],\"listeners\":{}}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"index\":\"806fa790-163c-11e8-a313-97de4647e200\",\"query\":{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "69f864d0-2fd7-11e7-97a8-85d8d5a99269",
+      "type": "visualization",
+      "updated_at": "2018-02-20T12:50:02.534Z",
+      "version": 1,
+      "attributes": {
+        "title": "[Netflow v5]: Types of Service (bytes)",
+        "visState": "{\"title\":\"[Netflow v5]: Types of Service (bytes)\",\"type\":\"pie\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"netflow.bytes\",\"customLabel\":\"Bytes\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"netflow.tos\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Type of Service\"}}],\"listeners\":{}}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"index\":\"806fa790-163c-11e8-a313-97de4647e200\",\"query\":{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "b88a8790-2fd7-11e7-bd03-932d3e38a4ff",
+      "type": "visualization",
+      "updated_at": "2018-02-20T12:50:01.008Z",
+      "version": 1,
+      "attributes": {
+        "title": "[Netflow v5]: VLANs (bytes)",
+        "visState": "{\"title\":\"[Netflow v5]: VLANs (bytes)\",\"type\":\"pie\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":true,\"legendPosition\":\"right\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"netflow.bytes\",\"customLabel\":\"Bytes\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"netflow.vlan\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"VLAN\"}}],\"listeners\":{}}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"index\":\"806fa790-163c-11e8-a313-97de4647e200\",\"query\":{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "97f430b0-622e-11e7-b0a5-e9bda2f6d168",
+      "type": "visualization",
+      "updated_at": "2018-02-20T12:50:02.530Z",
+      "version": 1,
+      "attributes": {
+        "title": "[Netflow v5]: TCP Flags (bytes)",
+        "visState": "{\"title\":\"[Netflow v5]: TCP Flags (bytes)\",\"type\":\"pie\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"netflow.bytes\",\"customLabel\":\"Bytes\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"netflow.tcp_flags\",\"size\":255,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"TCP Flags\"}}],\"listeners\":{}}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"index\":\"806fa790-163c-11e8-a313-97de4647e200\",\"query\":{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "65f3b500-6557-11e7-87c3-994b88f84501",
+      "type": "visualization",
+      "updated_at": "2018-02-20T12:49:50.895Z",
+      "version": 1,
+      "attributes": {
+        "title": "[Netflow v5]: Sources (packets)",
+        "visState": "{\"title\":\"[Netflow v5]: Sources (packets)\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(index=\\\"netflow-*\\\", metric=\\\"sum:netflow.packets\\\", split=\\\"netflow.src_addr:10\\\", kibana=true).scale_interval(1s).fit(mode=scale).if(operator=\\\"lt\\\", if=0, then=0).trim(start=2,end=1).label(regex=\\\"^.* netflow.src_addr:(.+) > .*$\\\", label=\\\"$1\\\").lines(width=1, stack=true, fill=1).yaxis(label=\\\"packets / sec\\\", min=0)\",\"interval\":\"auto\"},\"aggs\":[],\"listeners\":{}}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":{\"query_string\":{\"query\":\"*\"}},\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "55be8550-655e-11e7-9dda-9f993e2ba58b",
+      "type": "visualization",
+      "updated_at": "2018-02-20T12:50:02.502Z",
+      "version": 1,
+      "attributes": {
+        "title": "[Netflow v5]: Destination Count",
+        "visState": "{\"title\":\"[Netflow v5]: Destination Count\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":\"32\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"netflow.dst_addr\",\"customLabel\":\"Destinations\"}}],\"listeners\":{}}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"index\":\"806fa790-163c-11e8-a313-97de4647e200\",\"query\":{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "3277ea90-6578-11e7-8471-e5432f50acbd",
+      "type": "visualization",
+      "updated_at": "2018-02-20T12:49:59.989Z",
+      "version": 1,
+      "attributes": {
+        "title": "[Netflow v5]: Source Count",
+        "visState": "{\"title\":\"[Netflow v5]: Source Count\",\"type\":\"metric\",\"params\":{\"addLegend\":false,\"addTooltip\":true,\"fontSize\":\"32\",\"gauge\":{\"autoExtend\":false,\"backStyle\":\"Full\",\"colorSchema\":\"Green to Red\",\"colorsRange\":[{\"from\":0,\"to\":100}],\"gaugeColorMode\":\"None\",\"gaugeStyle\":\"Full\",\"gaugeType\":\"Metric\",\"invertColors\":false,\"labels\":{\"color\":\"black\",\"show\":true},\"orientation\":\"vertical\",\"percentageMode\":false,\"scale\":{\"color\":\"#333\",\"labels\":false,\"show\":false,\"width\":2},\"style\":{\"bgColor\":false,\"bgFill\":\"#000\",\"fontSize\":\"36\",\"labelColor\":false,\"subText\":\"\"},\"type\":\"simple\",\"useRange\":false,\"verticalSplit\":false},\"handleNoResults\":true,\"type\":\"gauge\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"netflow.src_addr\",\"customLabel\":\"Sources\"}}],\"listeners\":{}}",
+        "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"0 - 100\":\"rgb(0,104,55)\"}}}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"index\":\"806fa790-163c-11e8-a313-97de4647e200\",\"query\":{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "a3541940-6556-11e7-a807-e52f264c6cfd",
+      "type": "visualization",
+      "updated_at": "2018-02-20T12:49:49.931Z",
+      "version": 1,
+      "attributes": {
+        "title": "[Netflow v5]: Destinations (packets)",
+        "visState": "{\"title\":\"[Netflow v5]: Destinations (packets)\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(index=\\\"netflow-*\\\", metric=\\\"sum:netflow.packets\\\", split=\\\"netflow.dst_addr:10\\\", kibana=true).scale_interval(1s).fit(mode=scale).if(operator=\\\"lt\\\", if=0, then=0).trim(start=2,end=1).label(regex=\\\"^.* netflow.dst_addr:(.+) > .*$\\\", label=\\\"$1\\\").lines(width=1, stack=true, fill=1).yaxis(label=\\\"packets / sec\\\", min=0)\",\"interval\":\"auto\"},\"aggs\":[],\"listeners\":{}}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":{\"query_string\":{\"query\":\"*\"}},\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "8500a670-6579-11e7-8471-e5432f50acbd",
+      "type": "visualization",
+      "updated_at": "2018-02-20T12:50:01.016Z",
+      "version": 1,
+      "attributes": {
+        "title": "[Netflow v5]: Destination Port Count",
+        "visState": "{\"title\":\"[Netflow v5]: Destination Port Count\",\"type\":\"metric\",\"params\":{\"addLegend\":false,\"addTooltip\":true,\"fontSize\":\"32\",\"gauge\":{\"autoExtend\":false,\"backStyle\":\"Full\",\"colorSchema\":\"Green to Red\",\"colorsRange\":[{\"from\":0,\"to\":100}],\"gaugeColorMode\":\"None\",\"gaugeStyle\":\"Full\",\"gaugeType\":\"Metric\",\"invertColors\":false,\"labels\":{\"color\":\"black\",\"show\":true},\"orientation\":\"vertical\",\"percentageMode\":false,\"scale\":{\"color\":\"#333\",\"labels\":false,\"show\":false,\"width\":2},\"style\":{\"bgColor\":false,\"bgFill\":\"#000\",\"fontSize\":\"36\",\"labelColor\":false,\"subText\":\"\"},\"type\":\"simple\",\"useRange\":false,\"verticalSplit\":false},\"handleNoResults\":true,\"type\":\"gauge\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"netflow.dst_port\",\"customLabel\":\"Destination Ports\"}}],\"listeners\":{}}",
+        "uiStateJSON": "{\n  \"vis\": {\n    \"defaultColors\": {\n      \"0 - 100\": \"rgb(0,104,55)\"\n    }\n  }\n}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"index\":\"806fa790-163c-11e8-a313-97de4647e200\",\"query\":{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "71272b10-6579-11e7-8471-e5432f50acbd",
+      "type": "visualization",
+      "updated_at": "2018-02-20T12:50:00.012Z",
+      "version": 1,
+      "attributes": {
+        "title": "[Netflow v5]: Source Port Count",
+        "visState": "{\"title\":\"[Netflow v5]: Source Port Count\",\"type\":\"metric\",\"params\":{\"addLegend\":false,\"addTooltip\":true,\"fontSize\":\"32\",\"gauge\":{\"autoExtend\":false,\"backStyle\":\"Full\",\"colorSchema\":\"Green to Red\",\"colorsRange\":[{\"from\":0,\"to\":100}],\"gaugeColorMode\":\"None\",\"gaugeStyle\":\"Full\",\"gaugeType\":\"Metric\",\"invertColors\":false,\"labels\":{\"color\":\"black\",\"show\":true},\"orientation\":\"vertical\",\"percentageMode\":false,\"scale\":{\"color\":\"#333\",\"labels\":false,\"show\":false,\"width\":2},\"style\":{\"bgColor\":false,\"bgFill\":\"#000\",\"fontSize\":\"36\",\"labelColor\":false,\"subText\":\"\"},\"type\":\"simple\",\"useRange\":false,\"verticalSplit\":false},\"handleNoResults\":true,\"type\":\"gauge\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"netflow.src_port\",\"customLabel\":\"Source Ports\"}}],\"listeners\":{}}",
+        "uiStateJSON": "{\n  \"vis\": {\n    \"defaultColors\": {\n      \"0 - 100\": \"rgb(0,104,55)\"\n    }\n  }\n}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"index\":\"806fa790-163c-11e8-a313-97de4647e200\",\"query\":{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "3ee07620-6556-11e7-995a-3584c2c6482c",
+      "type": "visualization",
+      "updated_at": "2018-02-20T12:49:50.899Z",
+      "version": 1,
+      "attributes": {
+        "title": "[Netflow v5]: Destination Ports (packets)",
+        "visState": "{\"title\":\"[Netflow v5]: Destination Ports (packets)\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(index=\\\"netflow-*\\\", metric=\\\"sum:netflow.packets\\\", split=\\\"netflow.dst_port:10\\\", kibana=true).scale_interval(1s).fit(mode=scale).if(operator=\\\"lt\\\", if=0, then=0).trim(start=2,end=1).label(regex=\\\"^.* netflow.dst_port:(.+) > .*$\\\", label=\\\"$1\\\").lines(width=1, stack=true, fill=1).yaxis(label=\\\"packets / sec\\\", min=0)\",\"interval\":\"auto\"},\"aggs\":[],\"listeners\":{}}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":{\"query_string\":{\"query\":\"*\"}},\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "caf2c4b0-6556-11e7-be5f-c5cca8dd73b6",
+      "type": "visualization",
+      "updated_at": "2018-02-20T12:49:48.871Z",
+      "version": 1,
+      "attributes": {
+        "title": "[Netflow v5]: Source Ports (packets)",
+        "visState": "{\"title\":\"[Netflow v5]: Source Ports (packets)\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(index=\\\"netflow-*\\\", metric=\\\"sum:netflow.packets\\\", split=\\\"netflow.src_port:10\\\", kibana=true).scale_interval(1s).fit(mode=scale).if(operator=\\\"lt\\\", if=0, then=0).trim(start=2,end=1).label(regex=\\\"^.* netflow.src_port:(.+) > .*$\\\", label=\\\"$1\\\").lines(width=1, stack=true, fill=1).yaxis(label=\\\"packets / sec\\\", min=0)\",\"interval\":\"auto\"},\"aggs\":[],\"listeners\":{}}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":{\"query_string\":{\"query\":\"*\"}},\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "a13402f0-6557-11e7-a3eb-4b30743c9370",
+      "type": "visualization",
+      "updated_at": "2018-02-20T12:49:49.889Z",
+      "version": 1,
+      "attributes": {
+        "title": "[Netflow v5]: TCP Flags (packets)",
+        "visState": "{\"title\":\"[Netflow v5]: TCP Flags (packets)\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(index=\\\"netflow-*\\\", metric=\\\"sum:netflow.packets\\\", split=\\\"netflow.tcp_flags:10\\\", kibana=true).scale_interval(1s).fit(mode=scale).if(operator=\\\"lt\\\", if=0, then=0).trim(start=2,end=1).label(regex=\\\"^.* netflow.tcp_flags:(.+) > .*$\\\", label=\\\"$1\\\").lines(width=1, stack=true, fill=1).yaxis(label=\\\"packets / sec\\\", min=0)\",\"interval\":\"auto\"},\"aggs\":[],\"listeners\":{}}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":{\"query_string\":{\"query\":\"*\"}},\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "0de63e90-6558-11e7-8547-3d133170b50d",
+      "type": "visualization",
+      "updated_at": "2018-02-20T12:49:49.895Z",
+      "version": 1,
+      "attributes": {
+        "title": "[Netflow v5]: Types of Service (packets)",
+        "visState": "{\"title\":\"[Netflow v5]: Types of Service (packets)\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(index=\\\"netflow-*\\\", metric=\\\"sum:netflow.packets\\\", split=\\\"netflow.tos:10\\\", kibana=true).scale_interval(1s).fit(mode=scale).if(operator=\\\"lt\\\", if=0, then=0).trim(start=2,end=1).label(regex=\\\"^.* netflow.tos:(.+) > .*$\\\", label=\\\"$1\\\").lines(width=1, stack=true, fill=1).yaxis(label=\\\"packets / sec\\\", min=0)\",\"interval\":\"auto\"},\"aggs\":[],\"listeners\":{}}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":{\"query_string\":{\"query\":\"*\"}},\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "39ecd800-6558-11e7-bea4-0f5fadb995cc",
+      "type": "visualization",
+      "updated_at": "2018-02-20T12:49:51.914Z",
+      "version": 1,
+      "attributes": {
+        "title": "[Netflow v5]: VLANs (packets)",
+        "visState": "{\"title\":\"[Netflow v5]: VLANs (packets)\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(index=\\\"netflow-*\\\", metric=\\\"sum:netflow.packets\\\", split=\\\"netflow.vlan:10\\\", kibana=true).scale_interval(1s).fit(mode=scale).if(operator=\\\"lt\\\", if=0, then=0).trim(start=2,end=1).label(regex=\\\"^.* netflow.vlan:(.+) > .*$\\\", label=\\\"$1\\\").lines(width=1, stack=true, fill=1).yaxis(label=\\\"packets / sec\\\", min=0)\",\"interval\":\"auto\"},\"aggs\":[],\"listeners\":{}}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":{\"query_string\":{\"query\":\"*\"}},\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "9accd4a0-657a-11e7-8471-e5432f50acbd",
+      "type": "visualization",
+      "updated_at": "2018-02-20T12:49:59.996Z",
+      "version": 1,
+      "attributes": {
+        "title": "[Netflow v5]: ToS Count",
+        "visState": "{\"title\":\"[Netflow v5]: ToS Count\",\"type\":\"metric\",\"params\":{\"addLegend\":false,\"addTooltip\":true,\"fontSize\":\"32\",\"gauge\":{\"autoExtend\":false,\"backStyle\":\"Full\",\"colorSchema\":\"Green to Red\",\"colorsRange\":[{\"from\":0,\"to\":100}],\"gaugeColorMode\":\"None\",\"gaugeStyle\":\"Full\",\"gaugeType\":\"Metric\",\"invertColors\":false,\"labels\":{\"color\":\"black\",\"show\":true},\"orientation\":\"vertical\",\"percentageMode\":false,\"scale\":{\"color\":\"#333\",\"labels\":false,\"show\":false,\"width\":2},\"style\":{\"bgColor\":false,\"bgFill\":\"#000\",\"fontSize\":\"36\",\"labelColor\":false,\"subText\":\"\"},\"type\":\"simple\",\"useRange\":false,\"verticalSplit\":false},\"handleNoResults\":true,\"type\":\"gauge\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"netflow.tos\",\"customLabel\":\"Types of Service\"}}],\"listeners\":{}}",
+        "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"0 - 100\":\"rgb(0,104,55)\"}}}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"index\":\"806fa790-163c-11e8-a313-97de4647e200\",\"query\":{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "b13956f0-657a-11e7-8471-e5432f50acbd",
+      "type": "visualization",
+      "updated_at": "2018-02-20T12:50:01.021Z",
+      "version": 1,
+      "attributes": {
+        "title": "[Netflow v5]: VLAN Count",
+        "visState": "{\"title\":\"[Netflow v5]: VLAN Count\",\"type\":\"metric\",\"params\":{\"addLegend\":false,\"addTooltip\":true,\"fontSize\":\"32\",\"gauge\":{\"autoExtend\":false,\"backStyle\":\"Full\",\"colorSchema\":\"Green to Red\",\"colorsRange\":[{\"from\":0,\"to\":100}],\"gaugeColorMode\":\"None\",\"gaugeStyle\":\"Full\",\"gaugeType\":\"Metric\",\"invertColors\":false,\"labels\":{\"color\":\"black\",\"show\":true},\"orientation\":\"vertical\",\"percentageMode\":false,\"scale\":{\"color\":\"#333\",\"labels\":false,\"show\":false,\"width\":2},\"style\":{\"bgColor\":false,\"bgFill\":\"#000\",\"fontSize\":\"36\",\"labelColor\":false,\"subText\":\"\"},\"type\":\"simple\",\"useRange\":false,\"verticalSplit\":false},\"handleNoResults\":true,\"type\":\"gauge\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"netflow.vlan\",\"customLabel\":\"VLANs\"}}],\"listeners\":{}}",
+        "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"0 - 100\":\"rgb(0,104,55)\"}}}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"index\":\"806fa790-163c-11e8-a313-97de4647e200\",\"query\":{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "82fcfc50-657b-11e7-8471-e5432f50acbd",
+      "type": "visualization",
+      "updated_at": "2018-02-20T12:50:01.003Z",
+      "version": 1,
+      "attributes": {
+        "title": "[Netflow v5]: TCP Flags Count",
+        "visState": "{\"title\":\"[Netflow v5]: TCP Flags Count\",\"type\":\"metric\",\"params\":{\"addLegend\":false,\"addTooltip\":true,\"fontSize\":\"32\",\"gauge\":{\"autoExtend\":false,\"backStyle\":\"Full\",\"colorSchema\":\"Green to Red\",\"colorsRange\":[{\"from\":0,\"to\":100}],\"gaugeColorMode\":\"None\",\"gaugeStyle\":\"Full\",\"gaugeType\":\"Metric\",\"invertColors\":false,\"labels\":{\"color\":\"black\",\"show\":true},\"orientation\":\"vertical\",\"percentageMode\":false,\"scale\":{\"color\":\"#333\",\"labels\":false,\"show\":false,\"width\":2},\"style\":{\"bgColor\":false,\"bgFill\":\"#000\",\"fontSize\":\"36\",\"labelColor\":false,\"subText\":\"\"},\"type\":\"simple\",\"useRange\":false,\"verticalSplit\":false},\"handleNoResults\":true,\"type\":\"gauge\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"netflow.tcp_flags\",\"customLabel\":\"TCP Flag States\"}}],\"listeners\":{}}",
+        "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"0 - 100\":\"rgb(0,104,55)\"}}}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"index\":\"806fa790-163c-11e8-a313-97de4647e200\",\"query\":{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "806fa790-163c-11e8-a313-97de4647e200",
+      "type": "index-pattern",
+      "updated_at": "2018-02-20T12:49:36.556Z",
+      "version": 2,
+      "attributes": {
+        "title": "netflow-*",
+        "timeFieldName": "@timestamp",
+        "fields": "[{\"name\":\"@timestamp\",\"type\":\"date\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"@version\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"_id\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"_index\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"_score\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"_source\",\"type\":\"_source\",\"count\":0,\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"_type\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"host\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"location\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.application\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.bytes\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.convo_key\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.direction\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.dst_addr\",\"type\":\"ip\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.dst_as\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.dst_locality\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.dst_mask_len\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.dst_port\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.engine_id\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.engine_type\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.first_switched\",\"type\":\"date\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.flow_locality\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.flow_records\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.flow_seq_num\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.initiator\",\"type\":\"boolean\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.input_snmp\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.ip_protocol_version\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.last_switched\",\"type\":\"date\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.next_hop\",\"type\":\"ip\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.output_snmp\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.packets\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.protocol\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.protocol_name\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.sampling_interval\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.src_addr\",\"type\":\"ip\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.src_as\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.src_locality\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.src_mask_len\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.src_port\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.tcp_flags\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.tos\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.version\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"netflow.vlan\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"node_dst.foreign_id\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"node_dst.foreign_source\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"node_dst.node_id\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"node_exporter.foreign_id\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"node_exporter.foreign_source\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"node_exporter.node_id\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"node_src.foreign_id\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"node_src.foreign_source\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"node_src.node_id\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true}]"
+      }
+    },
+    {
+      "id": "d7716370-0cb0-11e8-88ba-8d82bf9f2249",
+      "type": "dashboard",
+      "updated_at": "2018-02-20T12:49:48.402Z",
+      "version": 1,
+      "attributes": {
+        "title": "[Netflow v5]: Traffic Analysis",
+        "hits": 0,
+        "description": "",
+        "panelsJSON": "[{\"panelIndex\":\"4\",\"gridData\":{\"x\":0,\"y\":0,\"w\":12,\"h\":2,\"i\":\"4\"},\"id\":\"26e166f0-2fe2-11e7-9d02-3f49bde5c1d5\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"7\",\"gridData\":{\"x\":6,\"y\":10,\"w\":6,\"h\":2,\"i\":\"7\"},\"id\":\"622844d0-6288-11e7-bcd8-a16ef1d32773\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"9\",\"gridData\":{\"x\":0,\"y\":22,\"w\":6,\"h\":2,\"i\":\"9\"},\"id\":\"2c9567c0-6289-11e7-bcd8-a16ef1d32773\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"10\",\"gridData\":{\"x\":6,\"y\":16,\"w\":6,\"h\":2,\"i\":\"10\"},\"id\":\"b61f84d0-6289-11e7-bcd8-a16ef1d32773\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"11\",\"gridData\":{\"x\":0,\"y\":16,\"w\":6,\"h\":2,\"i\":\"11\"},\"id\":\"6ad67290-6289-11e7-bcd8-a16ef1d32773\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"12\",\"gridData\":{\"x\":0,\"y\":10,\"w\":6,\"h\":2,\"i\":\"12\"},\"id\":\"91ae4100-6288-11e7-bcd8-a16ef1d32773\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"13\",\"gridData\":{\"x\":0,\"y\":4,\"w\":6,\"h\":2,\"i\":\"13\"},\"id\":\"735d6c70-628e-11e7-a842-b787fa3508ce\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"14\",\"gridData\":{\"x\":6,\"y\":4,\"w\":6,\"h\":2,\"i\":\"14\"},\"id\":\"56a23ac0-628e-11e7-a842-b787fa3508ce\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"15\",\"gridData\":{\"x\":0,\"y\":2,\"w\":4,\"h\":2,\"i\":\"15\"},\"id\":\"7c2cfd10-2fc7-11e7-8936-6f5fd5520124\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"16\",\"gridData\":{\"x\":0,\"y\":8,\"w\":4,\"h\":2,\"i\":\"16\"},\"id\":\"a8b68cb0-2fc8-11e7-8d8b-45ec51795dad\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"17\",\"gridData\":{\"x\":6,\"y\":2,\"w\":4,\"h\":2,\"i\":\"17\"},\"id\":\"5fd2fe30-2fc7-11e7-8936-6f5fd5520124\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"18\",\"gridData\":{\"x\":6,\"y\":8,\"w\":4,\"h\":2,\"i\":\"18\"},\"id\":\"47d426a0-2fc8-11e7-8b06-97426538fddd\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"19\",\"gridData\":{\"x\":0,\"y\":14,\"w\":4,\"h\":2,\"i\":\"19\"},\"id\":\"69f864d0-2fd7-11e7-97a8-85d8d5a99269\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"20\",\"gridData\":{\"x\":6,\"y\":14,\"w\":4,\"h\":2,\"i\":\"20\"},\"id\":\"b88a8790-2fd7-11e7-bd03-932d3e38a4ff\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"21\",\"gridData\":{\"x\":0,\"y\":20,\"w\":4,\"h\":2,\"i\":\"21\"},\"id\":\"97f430b0-622e-11e7-b0a5-e9bda2f6d168\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"25\",\"gridData\":{\"x\":0,\"y\":6,\"w\":6,\"h\":2,\"i\":\"25\"},\"id\":\"65f3b500-6557-11e7-87c3-994b88f84501\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"26\",\"gridData\":{\"x\":10,\"y\":2,\"w\":2,\"h\":2,\"i\":\"26\"},\"id\":\"55be8550-655e-11e7-9dda-9f993e2ba58b\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"27\",\"gridData\":{\"x\":4,\"y\":2,\"w\":2,\"h\":2,\"i\":\"27\"},\"id\":\"3277ea90-6578-11e7-8471-e5432f50acbd\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"28\",\"gridData\":{\"x\":6,\"y\":6,\"w\":6,\"h\":2,\"i\":\"28\"},\"id\":\"a3541940-6556-11e7-a807-e52f264c6cfd\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"29\",\"gridData\":{\"x\":10,\"y\":8,\"w\":2,\"h\":2,\"i\":\"29\"},\"id\":\"8500a670-6579-11e7-8471-e5432f50acbd\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"30\",\"gridData\":{\"x\":4,\"y\":8,\"w\":2,\"h\":2,\"i\":\"30\"},\"id\":\"71272b10-6579-11e7-8471-e5432f50acbd\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"38\",\"gridData\":{\"x\":6,\"y\":12,\"w\":6,\"h\":2,\"i\":\"38\"},\"id\":\"3ee07620-6556-11e7-995a-3584c2c6482c\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"42\",\"gridData\":{\"x\":0,\"y\":12,\"w\":6,\"h\":2,\"i\":\"42\"},\"id\":\"caf2c4b0-6556-11e7-be5f-c5cca8dd73b6\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"44\",\"gridData\":{\"x\":0,\"y\":24,\"w\":6,\"h\":2,\"i\":\"44\"},\"id\":\"a13402f0-6557-11e7-a3eb-4b30743c9370\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"45\",\"gridData\":{\"x\":0,\"y\":18,\"w\":6,\"h\":2,\"i\":\"45\"},\"id\":\"0de63e90-6558-11e7-8547-3d133170b50d\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"47\",\"gridData\":{\"x\":6,\"y\":18,\"w\":6,\"h\":2,\"i\":\"47\"},\"id\":\"39ecd800-6558-11e7-bea4-0f5fadb995cc\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"48\",\"gridData\":{\"x\":4,\"y\":14,\"w\":2,\"h\":2,\"i\":\"48\"},\"id\":\"9accd4a0-657a-11e7-8471-e5432f50acbd\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"49\",\"gridData\":{\"x\":10,\"y\":14,\"w\":2,\"h\":2,\"i\":\"49\"},\"id\":\"b13956f0-657a-11e7-8471-e5432f50acbd\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"53\",\"gridData\":{\"x\":4,\"y\":20,\"w\":2,\"h\":2,\"i\":\"53\"},\"id\":\"82fcfc50-657b-11e7-8471-e5432f50acbd\",\"type\":\"visualization\",\"version\":\"6.1.1\"}]",
+        "optionsJSON": "{\"darkTheme\":false,\"useMargins\":false}",
+        "uiStateJSON": "{\"P-15\":{\"vis\":{\"legendOpen\":true}},\"P-26\":{\"vis\":{\"defaultColors\":{\"0 - 100\":\"rgb(0,104,55)\"}}},\"P-27\":{\"vis\":{\"defaultColors\":{\"0 - 100\":\"rgb(0,104,55)\"}}},\"P-29\":{\"vis\":{\"defaultColors\":{\"0 - 100\":\"rgb(0,104,55)\"}}},\"P-30\":{\"vis\":{\"defaultColors\":{\"0 - 100\":\"rgb(0,104,55)\"}}},\"P-48\":{\"vis\":{\"defaultColors\":{\"0 - 100\":\"rgb(0,104,55)\"}}},\"P-49\":{\"vis\":{\"defaultColors\":{\"0 - 100\":\"rgb(0,104,55)\"}}},\"P-50\":{\"vis\":{\"defaultColors\":{\"0 - 100\":\"rgb(0,104,55)\"}}},\"P-51\":{\"vis\":{\"defaultColors\":{\"0 - 100\":\"rgb(0,104,55)\"}}},\"P-52\":{\"vis\":{\"defaultColors\":{\"0 - 100\":\"rgb(0,104,55)\"}}},\"P-53\":{\"vis\":{\"defaultColors\":{\"0 - 100\":\"rgb(0,104,55)\"}}}}",
+        "version": 1,
+        "timeRestore": false,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"filter\":[],\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"lucene\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"default_field\":\"*\",\"query\":\"*\"}}}}"
+        }
+      }
+    }
+  ]
+}
