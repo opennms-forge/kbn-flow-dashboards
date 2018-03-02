@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -e
+#!/usr/bin/env bash
 
 # This script will import OpenNMS NetFlow dashboards into Kibana
 # It requires access to Kibana with a given URL and credentials.
