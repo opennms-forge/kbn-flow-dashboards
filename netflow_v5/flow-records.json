@@ -7,8 +7,8 @@
       "updated_at": "2018-02-20T12:49:56.629Z",
       "version": 1,
       "attributes": {
-        "title": "[Netflow v5]: Flow Records",
-        "visState": "{\"title\":\"[Netflow v5]: Flow Records\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"labels\":{\"show\":true,\"truncate\":100},\"position\":\"bottom\",\"scale\":{\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{},\"type\":\"category\"}],\"defaultYExtents\":false,\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"legendPosition\":\"right\",\"mode\":\"stacked\",\"scale\":\"linear\",\"seriesParams\":[{\"data\":{\"id\":\"1\",\"label\":\"Flow Records\"},\"drawLinesBetweenPoints\":true,\"mode\":\"stacked\",\"show\":\"true\",\"showCircles\":true,\"type\":\"histogram\",\"valueAxis\":\"ValueAxis-1\"}],\"setYExtents\":false,\"times\":[],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"labels\":{\"filter\":false,\"rotate\":0,\"show\":true,\"truncate\":100},\"name\":\"LeftAxis-1\",\"position\":\"left\",\"scale\":{\"mode\":\"normal\",\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"Count\"},\"type\":\"value\"}]},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Flow Records\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"netflow.last_switched\",\"interval\":\"s\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Timeline\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"netflow.version\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Version\"}}],\"listeners\":{}}",
+        "title": "[Flow]: Flow Records",
+        "visState": "{\"title\":\"[Flow]: Flow Records\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"labels\":{\"show\":true,\"truncate\":100},\"position\":\"bottom\",\"scale\":{\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{},\"type\":\"category\"}],\"defaultYExtents\":false,\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"legendPosition\":\"right\",\"mode\":\"stacked\",\"scale\":\"linear\",\"seriesParams\":[{\"data\":{\"id\":\"1\",\"label\":\"Flow Records\"},\"drawLinesBetweenPoints\":true,\"mode\":\"stacked\",\"show\":\"true\",\"showCircles\":true,\"type\":\"histogram\",\"valueAxis\":\"ValueAxis-1\"}],\"setYExtents\":false,\"times\":[],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"labels\":{\"filter\":false,\"rotate\":0,\"show\":true,\"truncate\":100},\"name\":\"LeftAxis-1\",\"position\":\"left\",\"scale\":{\"mode\":\"normal\",\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"Count\"},\"type\":\"value\"}]},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Flow Records\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"netflow.last_switched\",\"interval\":\"s\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Timeline\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"netflow.version\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Version\"}}],\"listeners\":{}}",
         "uiStateJSON": "{\"vis\":{\"legendOpen\":true}}",
         "description": "",
         "version": 1,
@@ -23,8 +23,8 @@
       "updated_at": "2018-02-20T12:49:57.964Z",
       "version": 1,
       "attributes": {
-        "title": "[Netflow v5]: Flow Records",
-        "visState": "{\"title\":\"[Netflow v5]: Flow Records\",\"type\":\"metric\",\"params\":{\"addLegend\":false,\"addTooltip\":true,\"fontSize\":\"32\",\"gauge\":{\"autoExtend\":false,\"backStyle\":\"Full\",\"colorSchema\":\"Green to Red\",\"colorsRange\":[{\"from\":0,\"to\":100}],\"gaugeColorMode\":\"None\",\"gaugeStyle\":\"Full\",\"gaugeType\":\"Metric\",\"invertColors\":false,\"labels\":{\"color\":\"black\",\"show\":true},\"orientation\":\"vertical\",\"percentageMode\":false,\"scale\":{\"color\":\"#333\",\"labels\":false,\"show\":false,\"width\":2},\"style\":{\"bgColor\":false,\"bgFill\":\"#000\",\"fontSize\":\"36\",\"labelColor\":false,\"subText\":\"\"},\"type\":\"simple\",\"useRange\":false,\"verticalSplit\":false},\"handleNoResults\":true,\"type\":\"gauge\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Flow Records\"}}],\"listeners\":{}}",
+        "title": "[Flow]: Flow Records",
+        "visState": "{\"title\":\"[Flow]: Flow Records\",\"type\":\"metric\",\"params\":{\"addLegend\":false,\"addTooltip\":true,\"fontSize\":\"32\",\"gauge\":{\"autoExtend\":false,\"backStyle\":\"Full\",\"colorSchema\":\"Green to Red\",\"colorsRange\":[{\"from\":0,\"to\":100}],\"gaugeColorMode\":\"None\",\"gaugeStyle\":\"Full\",\"gaugeType\":\"Metric\",\"invertColors\":false,\"labels\":{\"color\":\"black\",\"show\":true},\"orientation\":\"vertical\",\"percentageMode\":false,\"scale\":{\"color\":\"#333\",\"labels\":false,\"show\":false,\"width\":2},\"style\":{\"bgColor\":false,\"bgFill\":\"#000\",\"fontSize\":\"36\",\"labelColor\":false,\"subText\":\"\"},\"type\":\"simple\",\"useRange\":false,\"verticalSplit\":false},\"handleNoResults\":true,\"type\":\"gauge\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Flow Records\"}}],\"listeners\":{}}",
         "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"0 - 100\":\"rgb(0,104,55)\"}}}",
         "description": "",
         "version": 1,
@@ -39,8 +39,8 @@
       "updated_at": "2018-02-20T12:49:49.875Z",
       "version": 1,
       "attributes": {
-        "title": "[Netflow v5]: Dashboard Navigation",
-        "visState": "{\"title\":\"[Netflow v5]: Dashboard Navigation\",\"type\":\"markdown\",\"params\":{\"markdown\":\"[Overview](#/dashboard/be46f9a0-0cb0-11e8-88ba-8d82bf9f2249) | [Conversation Partners](#/dashboard/b09e1e50-0cb0-11e8-88ba-8d82bf9f2249) | [Traffic Analysis](#/dashboard/d7716370-0cb0-11e8-88ba-8d82bf9f2249) | [Top-N](#/dashboard/c7115760-0cb0-11e8-88ba-8d82bf9f2249) | [Autonomous Systems](#/dashboard/ed432c60-0cb0-11e8-88ba-8d82bf9f2249) | [Flow Exporters](#/dashboard/cf6fd3f0-0cb0-11e8-88ba-8d82bf9f2249) | [Raw Flow Records](#/dashboard/e321ca20-0cb0-11e8-88ba-8d82bf9f2249)\\n***\",\"fontSize\":12},\"aggs\":[]}",
+        "title": "[Flow]: Dashboard Navigation",
+        "visState": "{\"title\":\"[Flow]: Dashboard Navigation\",\"type\":\"markdown\",\"params\":{\"markdown\":\"[Overview](#/dashboard/be46f9a0-0cb0-11e8-88ba-8d82bf9f2249) | [Conversation Partners](#/dashboard/b09e1e50-0cb0-11e8-88ba-8d82bf9f2249) | [Traffic Analysis](#/dashboard/d7716370-0cb0-11e8-88ba-8d82bf9f2249) | [Top-N](#/dashboard/c7115760-0cb0-11e8-88ba-8d82bf9f2249) | [Autonomous Systems](#/dashboard/ed432c60-0cb0-11e8-88ba-8d82bf9f2249) | [Flow Exporters](#/dashboard/cf6fd3f0-0cb0-11e8-88ba-8d82bf9f2249) | [Raw Flow Records](#/dashboard/e321ca20-0cb0-11e8-88ba-8d82bf9f2249)\\n***\",\"fontSize\":12},\"aggs\":[]}",
         "uiStateJSON": "{}",
         "description": "",
         "version": 1,
@@ -55,7 +55,7 @@
       "updated_at": "2018-02-20T12:49:56.691Z",
       "version": 1,
       "attributes": {
-        "title": "[Netflow v5]: Flow Records",
+        "title": "[Flow]: Flow Records",
         "description": "",
         "hits": 0,
         "columns": [
@@ -94,7 +94,7 @@
       "updated_at": "2018-02-20T12:49:48.865Z",
       "version": 1,
       "attributes": {
-        "title": "[Netflow v5]: Flow Records",
+        "title": "[Flow]: Flow Records",
         "hits": 0,
         "description": "",
         "panelsJSON": "[{\"gridData\":{\"h\":2,\"i\":\"2\",\"w\":9,\"x\":3,\"y\":2},\"id\":\"6a7e4790-2fe0-11e7-9d02-3f49bde5c1d5\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"gridData\":{\"h\":2,\"i\":\"3\",\"w\":3,\"x\":0,\"y\":2},\"id\":\"bbac23d0-2fe0-11e7-9d02-3f49bde5c1d5\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"gridData\":{\"h\":2,\"i\":\"4\",\"w\":12,\"x\":0,\"y\":0},\"id\":\"26e166f0-2fe2-11e7-9d02-3f49bde5c1d5\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"columns\":[\"netflow.src_addr\",\"netflow.src_port\",\"netflow.dst_addr\",\"netflow.dst_port\",\"netflow.application\",\"netflow.bytes\",\"netflow.packets\"],\"gridData\":{\"h\":4,\"i\":\"5\",\"w\":12,\"x\":0,\"y\":4},\"id\":\"0d0216f0-2fe0-11e7-9d02-3f49bde5c1d5\",\"panelIndex\":\"5\",\"sort\":[\"@timestamp\",\"desc\"],\"type\":\"search\",\"version\":\"6.1.1\"}]",

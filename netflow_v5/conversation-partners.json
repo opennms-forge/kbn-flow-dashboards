@@ -7,8 +7,8 @@
       "updated_at": "2018-02-20T12:49:57.942Z",
       "version": 1,
       "attributes": {
-        "title": "[Netflow v5]: Conversation Partners",
-        "visState": "{\"title\":\"[Netflow v5]: Conversation Partners\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":2,\"direction\":\"desc\"},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"netflow.bytes\",\"customLabel\":\"Bytes\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"netflow.packets\",\"customLabel\":\"Packets\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"netflow.src_addr\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Source\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"netflow.dst_addr\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Destination\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Flow Records\"}}],\"listeners\":{}}",
+        "title": "[Flow]: Conversation Partners",
+        "visState": "{\"title\":\"[Flow]: Conversation Partners\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":2,\"direction\":\"desc\"},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"netflow.bytes\",\"customLabel\":\"Bytes\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"netflow.packets\",\"customLabel\":\"Packets\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"netflow.src_addr\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Source\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"netflow.dst_addr\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Destination\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Flow Records\"}}],\"listeners\":{}}",
         "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":2,\"direction\":\"desc\"}}}}",
         "description": "",
         "version": 1,
@@ -23,8 +23,8 @@
       "updated_at": "2018-02-20T12:49:57.973Z",
       "version": 1,
       "attributes": {
-        "title": "[Netflow v5]: IP Version and Protocols (bytes)",
-        "visState": "{\"title\":\"[Netflow v5]: IP Version and Protocols (bytes)\",\"type\":\"pie\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"netflow.bytes\",\"customLabel\":\"Bytes\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"netflow.ip_protocol_version\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"IP Version\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"netflow.protocol\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Protocol\"}}],\"listeners\":{}}",
+        "title": "[Flow]: IP Version and Protocols (bytes)",
+        "visState": "{\"title\":\"[Flow]: IP Version and Protocols (bytes)\",\"type\":\"pie\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"netflow.bytes\",\"customLabel\":\"Bytes\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"netflow.ip_protocol_version\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"IP Version\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"netflow.protocol\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Protocol\"}}],\"listeners\":{}}",
         "uiStateJSON": "{}",
         "description": "",
         "version": 1,
@@ -39,8 +39,8 @@
       "updated_at": "2018-02-20T12:49:56.773Z",
       "version": 1,
       "attributes": {
-        "title": "[Netflow v5]: Destinations and Sources (bytes)",
-        "visState": "{\"title\":\"[Netflow v5]: Destinations and Sources (bytes)\",\"type\":\"pie\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"netflow.bytes\",\"customLabel\":\"Bytes\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"netflow.dst_addr\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Destination\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"netflow.src_addr\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Source\"}}],\"listeners\":{}}",
+        "title": "[Flow]: Destinations and Sources (bytes)",
+        "visState": "{\"title\":\"[Flow]: Destinations and Sources (bytes)\",\"type\":\"pie\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"netflow.bytes\",\"customLabel\":\"Bytes\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"netflow.dst_addr\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Destination\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"netflow.src_addr\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Source\"}}],\"listeners\":{}}",
         "uiStateJSON": "{}",
         "description": "",
         "version": 1,
@@ -55,8 +55,8 @@
       "updated_at": "2018-02-20T12:49:58.986Z",
       "version": 1,
       "attributes": {
-        "title": "[Netflow v5]: Destination and Source Ports (bytes)",
-        "visState": "{\"title\":\"[Netflow v5]: Destination and Source Ports (bytes)\",\"type\":\"pie\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"netflow.bytes\",\"customLabel\":\"Bytes\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"netflow.dst_port\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Destination Port\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"netflow.src_port\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Source Port\"}}],\"listeners\":{}}",
+        "title": "[Flow]: Destination and Source Ports (bytes)",
+        "visState": "{\"title\":\"[Flow]: Destination and Source Ports (bytes)\",\"type\":\"pie\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"netflow.bytes\",\"customLabel\":\"Bytes\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"netflow.dst_port\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Destination Port\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"netflow.src_port\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Source Port\"}}],\"listeners\":{}}",
         "uiStateJSON": "{}",
         "description": "",
         "version": 1,
@@ -71,8 +71,8 @@
       "updated_at": "2018-02-20T12:49:49.875Z",
       "version": 1,
       "attributes": {
-        "title": "[Netflow v5]: Dashboard Navigation",
-        "visState": "{\"title\":\"[Netflow v5]: Dashboard Navigation\",\"type\":\"markdown\",\"params\":{\"markdown\":\"[Overview](#/dashboard/be46f9a0-0cb0-11e8-88ba-8d82bf9f2249) | [Conversation Partners](#/dashboard/b09e1e50-0cb0-11e8-88ba-8d82bf9f2249) | [Traffic Analysis](#/dashboard/d7716370-0cb0-11e8-88ba-8d82bf9f2249) | [Top-N](#/dashboard/c7115760-0cb0-11e8-88ba-8d82bf9f2249) | [Autonomous Systems](#/dashboard/ed432c60-0cb0-11e8-88ba-8d82bf9f2249) | [Flow Exporters](#/dashboard/cf6fd3f0-0cb0-11e8-88ba-8d82bf9f2249) | [Raw Flow Records](#/dashboard/e321ca20-0cb0-11e8-88ba-8d82bf9f2249)\\n***\",\"fontSize\":12},\"aggs\":[]}",
+        "title": "[Flow]: Dashboard Navigation",
+        "visState": "{\"title\":\"[Flow]: Dashboard Navigation\",\"type\":\"markdown\",\"params\":{\"markdown\":\"[Overview](#/dashboard/be46f9a0-0cb0-11e8-88ba-8d82bf9f2249) | [Conversation Partners](#/dashboard/b09e1e50-0cb0-11e8-88ba-8d82bf9f2249) | [Traffic Analysis](#/dashboard/d7716370-0cb0-11e8-88ba-8d82bf9f2249) | [Top-N](#/dashboard/c7115760-0cb0-11e8-88ba-8d82bf9f2249) | [Autonomous Systems](#/dashboard/ed432c60-0cb0-11e8-88ba-8d82bf9f2249) | [Flow Exporters](#/dashboard/cf6fd3f0-0cb0-11e8-88ba-8d82bf9f2249) | [Raw Flow Records](#/dashboard/e321ca20-0cb0-11e8-88ba-8d82bf9f2249)\\n***\",\"fontSize\":12},\"aggs\":[]}",
         "uiStateJSON": "{}",
         "description": "",
         "version": 1,
@@ -98,7 +98,7 @@
       "updated_at": "2018-02-20T12:49:48.566Z",
       "version": 1,
       "attributes": {
-        "title": "[Netflow v5]: Conversation Partners",
+        "title": "[Flow]: Conversation Partners",
         "hits": 0,
         "description": "",
         "panelsJSON": "[{\"panelIndex\":\"1\",\"gridData\":{\"x\":0,\"y\":4,\"w\":12,\"h\":5,\"i\":\"1\"},\"id\":\"a7a47e70-2fde-11e7-9d02-3f49bde5c1d5\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"2\",\"gridData\":{\"x\":8,\"y\":2,\"w\":4,\"h\":2,\"i\":\"2\"},\"id\":\"de9da770-2fcb-11e7-8df8-b363df28ab61\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"3\",\"gridData\":{\"x\":0,\"y\":2,\"w\":4,\"h\":2,\"i\":\"3\"},\"id\":\"4440e130-2fdd-11e7-afd7-595689f3f18c\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"4\",\"gridData\":{\"x\":4,\"y\":2,\"w\":4,\"h\":2,\"i\":\"4\"},\"id\":\"4898db90-2fdb-11e7-84e6-333bd21ad9fd\",\"type\":\"visualization\",\"version\":\"6.1.1\"},{\"panelIndex\":\"5\",\"gridData\":{\"x\":0,\"y\":0,\"w\":12,\"h\":2,\"i\":\"5\"},\"id\":\"26e166f0-2fe2-11e7-9d02-3f49bde5c1d5\",\"type\":\"visualization\",\"version\":\"6.1.1\"}]",
