@@ -50,10 +50,6 @@ jobs:
     steps:
       - *attach_workspace
       - run:
-          name: Generate version number
-          command: |
-            export VERSION=$(git describe --tags --abbrev=0)
-      - run:
           name: Install ghr tool to create GitHub releases and upload artifacts
           command: |
             go get -u github.com/tcnksm/ghr
@@ -62,7 +58,7 @@ jobs:
           command: |
             mkdir release
             cp kbn-flow-dashboards.* release
-            ghr -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} ${VERSION} release
+            ghr -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} $(git describe --tags --abbrev=0) release
 
 workflows:
   version: 2
