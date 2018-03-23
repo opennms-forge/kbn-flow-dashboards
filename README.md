@@ -50,6 +50,10 @@ curl 'http://<my-kibana-host>.org:5601/api/kibana/dashboards/export?dashboard=d7
 
 [Fork](https://help.github.com/articles/fork-a-repo/) this repository and add the dashboard into the `netflow_v5` directory and create a [Pull Request](https://help.github.com/articles/creating-a-pull-request/).
 
+## Release Instructions
+
+* [How to release Kibana Flow Dashboards](https://wiki.opennms.org/wiki/How_to_release_Kibana_Flow_Dashboards)
+
 ## Credits
 
 Dashboards are heavily influenced by the [Logstash project](https://github.com/elastic/logstash/tree/master/modules/netflow/configuration/kibana/6.x)
