@@ -1,0 +1,83 @@
+version: 2.0
+
+defaults: &defaults
+
+  working_directory: /home/circleci/kbn-dashboards
+
+  workspace_root: &workspace_root
+    .
+
+  attach_workspace: &attach_workspace
+    attach_workspace:
+      at: *workspace_root
+
+references:
+  build_container_config: &build_container_config
+    docker:
+      - image: indigo/rpmbuilder:latest
+
+  go_container_config: &go_container_config
+    docker:
+      - image: circleci/golang
+
+jobs:
+  package_dashboards:
+    <<: *defaults
+    <<: *build_container_config
+
+    steps:
+      - *attach_workspace
+      - checkout
+      - run:
+          name: Create Kibana Dashboards as tar.gz and zip archives
+          command: |
+            export FILES_2_ARCHIVE="load.sh netflow_v5 README.md";
+            export ARCHIVE_NAME="kbn-flow-dashboards";
+            tar czf ${ARCHIVE_NAME}.tar.gz ${FILES_2_ARCHIVE};
+            zip -9 -r ${ARCHIVE_NAME} ${FILES_2_ARCHIVE};
+      - store_artifacts:
+          path: kbn-flow-dashboards.tar.gz
+      - store_artifacts:
+          path: kbn-flow-dashboards.zip
+      - persist_to_workspace:
+          root: *workspace_root
+          paths: .
+
+  publish_github:
+    <<: *defaults
+    <<: *go_container_config
+
+    steps:
+      - *attach_workspace
+      - run:
+          name: Generate version number
+          command: |
+            export VERSION=$(git describe --tags --abbrev=0)
+      - run:
+          name: Install ghr tool to create GitHub releases and upload artifacts
+          command: |
+            go get -u github.com/tcnksm/ghr
+      - run:
+          name: Collect archive files and publish to GitHub
+          command: |
+            mkdir release
+            cp kbn-flow-dashboards.* release
+            ghr -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} ${VERSION} release
+
+workflows:
+  version: 2
+  package-publish:
+    jobs:
+      - package_dashboards:
+          filters:
+            tags:
+              only: /.*/
+      - publish_github:
+          requires:
+            - package_dashboards
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only:
+                - /^[0-9].*/
